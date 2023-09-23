@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces.Generics;
+using Entities.Entidades;
 
 namespace Domain.Interfaces.IDespesa
 {
-    public interface InterfaceDespesa
+    public interface InterfaceDespesa : InterfaceGeneric<Despesa>
     {
+        Task<IList<Despesa>> ListarDespesasUsuarioAsync(string emailUsuario);
+
+        Task<IList<Despesa>> ListarDespesasUsuarioNaoPagasMesesAnterioresAsync(string emailUsuario);
     }
 }
