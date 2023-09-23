@@ -135,6 +135,9 @@ dotnet_diagnostic.S1643.severity = silent
 dotnet_diagnostic.SA1119.severity = silent
 csharp_style_prefer_primary_constructors = true:suggestion
 
+# CS8603: Possible null reference return.
+dotnet_diagnostic.CS8603.severity = silent
+
 [*.{cs,vb}]
 #### Naming styles ####
 

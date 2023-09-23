@@ -4,11 +4,12 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Entities.Notificacoes;
 
 namespace Entities.Entidades
 {
     [Table("UsuarioSistemaFinanceiro")]
-    public class UsuarioSistemaFinanceiro
+    public class UsuarioSistemaFinanceiro : Notifica
     {
         public int Id { get; set; }
 

@@ -20,7 +20,7 @@ namespace Infra.Repositorio
             _OptionsBuilder = new DbContextOptions<ContextBase>();
         }
 
-        public async Task<IList<UsuarioSistemaFinanceiro>> ListarUsuarioSistemaFinanceiroAsync(int IdSistema)
+        public async Task<IList<UsuarioSistemaFinanceiro>> ListarUsuarioSistemaFinanceiro(int IdSistema)
         {
             using (var banco = new ContextBase(_OptionsBuilder))
             {
@@ -30,7 +30,7 @@ namespace Infra.Repositorio
             }
         }
 
-        public async Task<UsuarioSistemaFinanceiro> ObterUsuarioPorEmailAsync(string emailUsuario)
+        public async Task<UsuarioSistemaFinanceiro> ObterUsuarioPorEmail(string emailUsuario)
         {
             using (var banco = new ContextBase(_OptionsBuilder))
             {
@@ -40,7 +40,7 @@ namespace Infra.Repositorio
             }
         }
 
-        public async Task RemoverUsuariosAsync(List<UsuarioSistemaFinanceiro> usuarios)
+        public async Task RemoverUsuarios(List<UsuarioSistemaFinanceiro> usuarios)
         {
             using (var banco = new ContextBase(_OptionsBuilder))
             {
