@@ -25,7 +25,7 @@ namespace WebApi.Controllers
 
         [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/CreateToken")]
+        [HttpPost("CreateToken")]
         public async Task<IActionResult> Create([FromBody] InputModel input)
         {
             if (string.IsNullOrWhiteSpace(input.Email) || string.IsNullOrWhiteSpace(input.Password))

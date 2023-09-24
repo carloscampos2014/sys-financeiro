@@ -5,6 +5,7 @@ using Entities.Entidades;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using WebApi.Models;
 
 namespace WebApi.Controllers
 {
@@ -16,7 +17,8 @@ namespace WebApi.Controllers
         private readonly InterfaceUsuarioSistemaFinanceiro _interfaceUsuarioSistemaFinanceiro;
         private readonly IUsuarioSistemaFinanceiroServico _usuarioSistemaFinanceiroServico;
 
-        public UsuarioSistemaFinanceiroController(InterfaceUsuarioSistemaFinanceiro interfaceUsuarioSistemaFinanceiro,
+        public UsuarioSistemaFinanceiroController(
+            InterfaceUsuarioSistemaFinanceiro interfaceUsuarioSistemaFinanceiro,
             IUsuarioSistemaFinanceiroServico usuarioSistemaFinanceiroServico)
         {
             _interfaceUsuarioSistemaFinanceiro = interfaceUsuarioSistemaFinanceiro;
@@ -25,20 +27,20 @@ namespace WebApi.Controllers
 
 
         [Produces("application/json")]
-        [HttpGet("/api/ListaUsuariosSistemaFinanceiro")]
-        public async Task<object> ListaUsuariosSistemaFinanceiro(int idSistema)
+        [HttpGet("ListarporSistemaFinanceiro")]
+        public async Task<object> ListaPorSistemaFinanceiro(int idSistema)
         {
             return await _interfaceUsuarioSistemaFinanceiro.ListarUsuarioSistemaFinanceiro(idSistema);
         }
 
         [Produces("application/json")]
-        [HttpPost("/api/CadastroUsuariosSistemaFinanceiro")]
-        public async Task<object> CadastroUsuariosSistemaFinanceiro(int idSistema, string emailUsuario)
+        [HttpPost("Adicionar")]
+        public async Task<object> Adicionar([FromBody] AdicionarModel model)
         {
             var novo = new UsuarioSistemaFinanceiro()
             {
-                IdSistema = idSistema,
-                EmailUsuario = emailUsuario,
+                IdSistema = model.IdSistema,
+                EmailUsuario = model.EmailUsuario,
                 Administrador = false,
                 SistemaAtual = true,
             };
@@ -49,8 +51,8 @@ namespace WebApi.Controllers
         }
 
         [Produces("application/json")]
-        [HttpDelete("/api/DeleteUsuariosSistemaFinanceiro")]
-        public async Task<object> DeleteUsuariosSistemaFinanceiro(int id)
+        [HttpDelete("Remover")]
+        public async Task<object> Remover(int id)
         {
             var usuario = await _interfaceUsuarioSistemaFinanceiro.GetEntityById(id);
 

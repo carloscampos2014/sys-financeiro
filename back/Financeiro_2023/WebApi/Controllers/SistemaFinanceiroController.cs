@@ -15,22 +15,39 @@ namespace WebApi.Controllers
         private readonly InterfaceSistemaFinanceiro _interfaceSistemaFinanceiro;
         private readonly ISistemaFinanceiroServico _sistemaFinanceiroServico;
 
-        public SistemaFinanceiroController(InterfaceSistemaFinanceiro interfaceSistemaFinanceiro, ISistemaFinanceiroServico sistemaFinanceiroServico)
+        public SistemaFinanceiroController(
+            InterfaceSistemaFinanceiro interfaceSistemaFinanceiro,
+            ISistemaFinanceiroServico sistemaFinanceiroServico)
         {
             _interfaceSistemaFinanceiro = interfaceSistemaFinanceiro;
             _sistemaFinanceiroServico = sistemaFinanceiroServico;
         }
 
+
         [Produces("application/json")]
-        [HttpGet("/api/ListaSistemasUsuario")]
-        public async Task<object> ListaSistemasUsuario(string emailUsuario)
+        [HttpGet("Listar")]
+        public async Task<object> Listar()
+        {
+            return await _interfaceSistemaFinanceiro.List();
+        }
+
+        [Produces("application/json")]
+        [HttpGet("ListarPorUsuario")]
+        public async Task<object> ListarPorUsuario(string emailUsuario)
         {
             return await _interfaceSistemaFinanceiro.ListarSistemaFinanceiroUsuario(emailUsuario);
         }
 
         [Produces("application/json")]
-        [HttpPost("/api/AdicionarSistemaFinanceiro")]
-        public async Task<object> AdicionarSistemaFinanceiro(SistemaFinanceiro sistemaFinanceiro)
+        [HttpGet("Obter")]
+        public async Task<object> Obter(int id)
+        {
+            return await _interfaceSistemaFinanceiro.GetEntityById(id);
+        }
+
+        [Produces("application/json")]
+        [HttpPost("Adicionar")]
+        public async Task<object> Adicionar(SistemaFinanceiro sistemaFinanceiro)
         {
             await _sistemaFinanceiroServico.AdicionarSistemaFinanceiro(sistemaFinanceiro);
 
@@ -38,8 +55,8 @@ namespace WebApi.Controllers
         }
 
         [Produces("application/json")]
-        [HttpPut("/api/AtualizarSistemaFinanceiro")]
-        public async Task<object> AtualizarSistemaFinanceiro(SistemaFinanceiro sistemaFinanceiro)
+        [HttpPut("Atualizar")]
+        public async Task<object> Atualizar(SistemaFinanceiro sistemaFinanceiro)
         {
             await _sistemaFinanceiroServico.AtualizarSistemaFinanceiro(sistemaFinanceiro);
 
@@ -47,26 +64,12 @@ namespace WebApi.Controllers
         }
 
         [Produces("application/json")]
-        [HttpGet("/api/ObterSistemaFinanceiro")]
-        public async Task<object> ObterSistemaFinanceiro(int id)
-        {
-            return await _interfaceSistemaFinanceiro.GetEntityById(id);
-        }
-
-        [Produces("application/json")]
-        [HttpDelete("/api/DeleteSistemaFinanceiro")]
-        public async Task<object> DeleteSistemaFinanceiro(int id)
+        [HttpDelete("Remover")]
+        public async Task<object> Remover(int id)
         {
             var sistemaFinanceiro = await _interfaceSistemaFinanceiro.GetEntityById(id);
             await _interfaceSistemaFinanceiro.Delete(sistemaFinanceiro);
             return Task.FromResult(sistemaFinanceiro);
-        }
-
-        [Produces("application/json")]
-        [HttpGet("/api/ListarSistemaFinanceiro")]
-        public async Task<object> ListarSistemaFinanceiro()
-        {
-            return await _interfaceSistemaFinanceiro.List();
         }
     }
 }

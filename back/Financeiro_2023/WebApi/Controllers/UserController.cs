@@ -26,7 +26,7 @@ namespace WebApi.Controllers
 
         [AllowAnonymous]
         [Produces("application/json")]
-        [HttpPost("/api/AdicionarUsuario")]
+        [HttpPost("AdicionarUsuario")]
         public async Task<IActionResult> AdicionarUsuario([FromBody] Login login)
         {
             if(string.IsNullOrWhiteSpace(login.Email) || string.IsNullOrWhiteSpace(login.Senha) ||
