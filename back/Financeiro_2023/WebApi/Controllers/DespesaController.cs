@@ -35,6 +35,13 @@ namespace WebApi.Controllers
         }
 
         [Produces("application/json")]
+        [HttpGet("CarregarGraficos")]
+        public async Task<object> CarregarGraficos(string emailUsuario)
+        {
+            return await _despesaServico.CarregarGraficos(emailUsuario);
+        }
+
+        [Produces("application/json")]
         [HttpGet("ListarNaoPagasMesesAnteriores")]
         public async Task<object> ListarNaoPagasMesesAnteriores(string emailUsuario)
         {

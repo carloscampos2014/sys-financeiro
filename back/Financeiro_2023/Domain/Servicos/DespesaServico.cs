@@ -40,5 +40,29 @@ namespace Domain.Servicos
             if (valido)
                 await _interfaceDespesa.Update(despesa);
         }
+
+        public async Task<object> CarregarGraficos(string emailUsuario)
+        {
+            var despesasUsuarios = await _interfaceDespesa.ListarDespesasUsuario(emailUsuario);
+            var despesasNaoPagas = await _interfaceDespesa.ListarDespesasUsuarioNaoPagasMesesAnteriores(emailUsuario);
+            var valorDespesasNaoPagas = despesasNaoPagas.Sum(s => s.Valor);
+            var valorDespesasPagas = despesasUsuarios
+                .Where(w => w.Pago && w.TipoDespesa == Entities.Enums.EnumTipoDespesa.Contas)
+                .Sum(s => s.Valor);
+            var valorDespesasPendentes = despesasUsuarios
+                .Where(w => !w.Pago && w.TipoDespesa == Entities.Enums.EnumTipoDespesa.Contas)
+                .Sum(s => s.Valor);
+            var valorInvestimentos = despesasUsuarios
+                .Where(w => w.TipoDespesa == Entities.Enums.EnumTipoDespesa.Investimento)
+                .Sum(s => s.Valor);
+
+            return new {
+                Sucesso = "OK",
+                DespesasNaoPagas = valorDespesasNaoPagas,
+                DespesasPagas = valorDespesasPagas,
+                DespesasPendentes = valorDespesasPendentes,
+                Investimento = valorInvestimentos,
+            };
+        }
     }
 }
