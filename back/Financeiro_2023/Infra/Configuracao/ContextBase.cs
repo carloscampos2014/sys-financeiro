@@ -40,8 +40,6 @@ namespace Infra.Configuracao
         }
 
         public string ObterStringConexao() =>
-            "Data Source=PATCGNQJ93;Initial Catalog=FINANCEIRO_2023;Integrated Security=True;";
-
-
+            "Server=PATCGNQJ93;Database=FINANCEIRO_2023;User Id=sa;Password=170523;TrustServerCertificate=True;";
     }
 }
