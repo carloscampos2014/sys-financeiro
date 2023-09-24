@@ -11,11 +11,12 @@ import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+
     CommonModule,
     ReactiveFormsModule,
     HttpClientModule,

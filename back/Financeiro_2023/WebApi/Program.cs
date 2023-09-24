@@ -1,3 +1,4 @@
+using System.Net;
 using Domain.Interfaces.Generics;
 using Domain.Interfaces.ICategoria;
 using Domain.Interfaces.IDespesa;
@@ -104,7 +105,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseCors();
+app.UseCors(x =>
+x.AllowAnyOrigin()
+.AllowAnyMethod()
+.AllowAnyHeader()
+);
 
 app.UseHttpsRedirection();
 
