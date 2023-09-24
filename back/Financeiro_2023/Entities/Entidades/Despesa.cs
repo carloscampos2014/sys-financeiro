@@ -35,6 +35,6 @@ namespace Entities.Entidades
         [Column(Order = 1)]
         public int IdCategoria { get; set; }
 
-        public virtual Categoria Categoria { get; set; } = new Categoria();
+        //public virtual Categoria Categoria { get; set; } = new Categoria();
     }
 }

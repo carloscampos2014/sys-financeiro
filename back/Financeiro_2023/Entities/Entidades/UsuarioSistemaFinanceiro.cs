@@ -23,6 +23,6 @@ namespace Entities.Entidades
         [Column(Order = 1)]
         public int IdSistema { get; set; }
 
-        public virtual SistemaFinanceiro SistemaFinanceiro { get; set; } = new SistemaFinanceiro();
+        //public virtual SistemaFinanceiro SistemaFinanceiro { get; set; } = new SistemaFinanceiro();
     }
 }

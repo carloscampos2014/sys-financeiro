@@ -63,6 +63,8 @@ namespace WebApi.Controllers
             {
                 IdCategoria  = model.IdCategoria,
                 Nome = model.Nome,
+                Valor = model.Valor,
+                TipoDespesa = model.TipoDespesa,
             };
 
             await _despesaServico.AdicionarDespesa(novo);

@@ -28,12 +28,12 @@ namespace WebApi.Controllers
         [HttpPost("CreateToken")]
         public async Task<IActionResult> Create([FromBody] InputModel input)
         {
-            if (string.IsNullOrWhiteSpace(input.Email) || string.IsNullOrWhiteSpace(input.Password))
+            if (string.IsNullOrWhiteSpace(input.Email) || string.IsNullOrWhiteSpace(input.Senha))
             {
                 return Unauthorized();
             }
 
-            var result = await _signInManager.PasswordSignInAsync(input.Email, input.Password, false, lockoutOnFailure: false);
+            var result = await _signInManager.PasswordSignInAsync(input.Email, input.Senha, false, lockoutOnFailure: false);
             if (!result.Succeeded)
             {
                 return Unauthorized();
