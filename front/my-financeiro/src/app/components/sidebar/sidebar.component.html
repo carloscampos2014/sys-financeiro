@@ -13,9 +13,9 @@
   <div class="group-menu">
     <div class="container-icon-menu">
       <div class="caixa-menu" [ngClass]="{
-            'caixa-menu-select': this.menuServico.menuselecionado == 'sistemafinanceiro',
-            '': this.menuServico.menuselecionado != 'sistemafinanceiro'}">
-        <div class="caixa-menu-texto" (click)="selectMenu('sistemafinanceiro')">
+            'caixa-menu-select': this.menuServico.menuselecionado == 'sistema',
+            '': this.menuServico.menuselecionado != 'sistema'}">
+        <div class="caixa-menu-texto" (click)="selectMenu('sistema')">
           Sistemas Financeiro
         </div>
       </div>
@@ -24,9 +24,9 @@
   <div class="group-menu">
     <div class="container-icon-menu">
       <div class="caixa-menu" [ngClass]="{
-            'caixa-menu-select': this.menuServico.menuselecionado == 'categorias',
-            '': this.menuServico.menuselecionado != 'categorias'}">
-        <div class="caixa-menu-texto" (click)="selectMenu('categorias')">
+            'caixa-menu-select': this.menuServico.menuselecionado == 'categoria',
+            '': this.menuServico.menuselecionado != 'categoria'}">
+        <div class="caixa-menu-texto" (click)="selectMenu('categoria')">
           Categorias
         </div>
       </div>
@@ -35,9 +35,9 @@
   <div class="group-menu">
     <div class="container-icon-menu">
       <div class="caixa-menu" [ngClass]="{
-            'caixa-menu-select': this.menuServico.menuselecionado == 'despesas',
-            '': this.menuServico.menuselecionado != 'despesas'}">
-        <div class="caixa-menu-texto" (click)="selectMenu('despesas')">
+            'caixa-menu-select': this.menuServico.menuselecionado == 'despesa',
+            '': this.menuServico.menuselecionado != 'despesa'}">
+        <div class="caixa-menu-texto" (click)="selectMenu('despesa')">
           Despesas
         </div>
       </div>
