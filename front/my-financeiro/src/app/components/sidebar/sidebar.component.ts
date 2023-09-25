@@ -15,6 +15,5 @@ export class SidebarComponent {
 
   selectMenu(menu: string) {
     this.router.navigate([`/${menu}`]);
-    this.menuServico.menuselecionado = menu;
   }
 }
