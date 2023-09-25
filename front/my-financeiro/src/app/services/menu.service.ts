@@ -10,4 +10,5 @@ export class MenuService {
   }
 
   menuselecionado: string;
+  paginaSelecionada: string;
 }

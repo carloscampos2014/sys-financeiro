@@ -1,4 +1,5 @@
 .container-navbar {
+  position: fixed;
   background: #141e3d;
   border: 1px solid #141e3d;
   box-sizing: border-box;
@@ -7,4 +8,15 @@
   display: flex;
   width: -webkit-fill-available;
   z-index: 9999;
+
+  .navbar-title {
+    display: flex;
+    font-weight: 600;
+    font-size: 28px;
+    width: 100%;
+    padding: 10px 16px 10px 190px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
 }

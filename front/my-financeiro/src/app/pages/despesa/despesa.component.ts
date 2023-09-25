@@ -12,5 +12,6 @@ export class DespesaComponent {
   }
   ngOnInit(): void {
     this.menuService.menuselecionado = 'despesa';
+    this.menuService.paginaSelecionada = 'Cadastro de Despesas';
   }
 }

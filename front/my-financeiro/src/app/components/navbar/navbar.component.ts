@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuService } from 'src/app/services/menu.service';
 
 @Component({
   selector: 'navbar',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  constructor(public menuService: MenuService) {
 
+  }
 }

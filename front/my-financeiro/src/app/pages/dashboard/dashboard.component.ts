@@ -12,5 +12,6 @@ export class DashboardComponent {
   }
   ngOnInit(): void {
     this.menuService.menuselecionado = 'dashboard';
+    this.menuService.paginaSelecionada = '';
   }
 }

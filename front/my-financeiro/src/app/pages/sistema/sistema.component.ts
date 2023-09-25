@@ -12,5 +12,6 @@ export class SistemaComponent {
   }
   ngOnInit(): void {
     this.menuService.menuselecionado = 'sistema';
+    this.menuService.paginaSelecionada = 'Cadastro de Sistemas Financeiros';
   }
 }

@@ -12,5 +12,6 @@ export class CategoriaComponent {
   }
   ngOnInit(): void {
     this.menuService.menuselecionado = 'categoria';
+    this.menuService.paginaSelecionada = 'Cadastro de Categorias';
   }
 }
