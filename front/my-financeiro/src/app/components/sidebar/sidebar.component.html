@@ -1,0 +1,46 @@
+<div class="container-sidebar">
+  <div class="group-menu">
+    <div class="container-icon-menu">
+      <div class="caixa-menu" [ngClass]="{
+          'caixa-menu-select': this.menuServico.menuselecionado == 'dashboard',
+          '': this.menuServico.menuselecionado != 'dashboard'}">
+        <div class="caixa-menu-texto" (click)="selectMenu('dashboard')">
+          DashBoard
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="group-menu">
+    <div class="container-icon-menu">
+      <div class="caixa-menu" [ngClass]="{
+            'caixa-menu-select': this.menuServico.menuselecionado == 'sistemafinanceiro',
+            '': this.menuServico.menuselecionado != 'sistemafinanceiro'}">
+        <div class="caixa-menu-texto" (click)="selectMenu('sistemafinanceiro')">
+          Sistema Financeiro
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="group-menu">
+    <div class="container-icon-menu">
+      <div class="caixa-menu" [ngClass]="{
+            'caixa-menu-select': this.menuServico.menuselecionado == 'categorias',
+            '': this.menuServico.menuselecionado != 'categorias'}">
+        <div class="caixa-menu-texto" (click)="selectMenu('categorias')">
+          Categorias
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="group-menu">
+    <div class="container-icon-menu">
+      <div class="caixa-menu" [ngClass]="{
+            'caixa-menu-select': this.menuServico.menuselecionado == 'despesas',
+            '': this.menuServico.menuselecionado != 'despesas'}">
+        <div class="caixa-menu-texto" (click)="selectMenu('despesas')">
+          Despesas
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

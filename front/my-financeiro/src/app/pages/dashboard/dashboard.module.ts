@@ -2,6 +2,8 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { DashboardComponent } from "./dashboard.component";
+import { NavbarModule } from "src/app/components/navbar/navbar.module";
+import { SidebarModule } from "src/app/components/sidebar/sidebar.module";
 
 @NgModule({
   providers: [],
@@ -9,6 +11,8 @@ import { DashboardComponent } from "./dashboard.component";
   imports: [
     CommonModule,
     DashboardRoutingModule,
+    NavbarModule,
+    SidebarModule,
   ]
 })
 
