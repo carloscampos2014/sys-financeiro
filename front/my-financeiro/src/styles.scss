@@ -24,7 +24,7 @@ input {
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  width: 375px;
+  width: 90vw;
   height: 18px;
   background: #ffffff;
   border: 1px solid #9e9e9e;
@@ -50,11 +50,13 @@ label {
 .container-conteudo {
   padding: 60px 16px 16px 196px;
   min-height: 500px;
+  width: 90vw;
   height: -webkit-fill-available;
   background: #323766;
 
   .content-page {
     background: #d8dae0;
+    width: 90vw;
     padding: 16px;
     border-radius: 5px;
     min-height: 500px;
