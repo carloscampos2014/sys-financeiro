@@ -24,7 +24,7 @@ input {
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  width: 90vw;
+  width: 98%;
   height: 18px;
   background: #ffffff;
   border: 1px solid #9e9e9e;
@@ -50,38 +50,41 @@ label {
 .container-conteudo {
   padding: 60px 16px 16px 196px;
   min-height: 500px;
-  width: 90vw;
-  height: -webkit-fill-available;
+  width: 84vw;
+  height: 84vh;
   background: #323766;
 
   .content-page {
     background: #d8dae0;
-    width: 90vw;
+    width: 98%;
     padding: 16px;
     border-radius: 5px;
-    min-height: 500px;
-    height: -webkit-fill-available;
+    height: 98%;
 
     .form-page {
       display: grid;
-      justify-content: flex-start;
 
       .row {
         display: flex;
+        width: 98%;
         justify-content: flex-start;
-        align-items: center;
-        padding-bottom: 16px;
 
-        .group-row {}
+        .group-row {
+          width: 99%;
+        }
+
       }
 
       .row-button {
         display: flex;
+        width: 100%;
         justify-content: flex-end;
-        align-items: center;
-        padding-bottom: 16px;
 
-        .group-button {}
+        .group-button {
+          display: flex;
+          width: 100%;
+          justify-content: flex-end;
+        }
       }
     }
   }
