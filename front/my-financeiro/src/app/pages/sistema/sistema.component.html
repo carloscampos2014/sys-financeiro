@@ -2,18 +2,24 @@
 <sidebar></sidebar>
 <div class="container-conteudo">
   <div class="content-page">
-    <div class="form-page">
+    <form class="form-page" [formGroup]="sistemaForm" (submit)="enviar()">
       <div class="row">
         <div class="group-row">
-          <label>Nome</label>
-          <input style="width: 100%;" type="text" name="nome" id="nome" formControlName="nome" required="">
+          <label>Descrição Sistema</label>
+          <input type="text" name="nome" id="nome" placeholder="Digite a Descrição do Sistema" formControlName="nome"
+            required="">
+          <label *ngIf="sistemaForm.get('nome')?.errors?.['required'] &&  sistemaForm.get('nome')?.touched"
+            class="error-input">
+            Campo Obrigatório!
+          </label>
         </div>
       </div>
       <div class="row-button">
         <div class="group-button">
-          <input type="submit" class="btn-primary" value="Salvar">
+          <input type="submit" class="btn-primary" value="Salvar" [ngClass]="{'disabled' : !sistemaForm.valid}"
+            [disabled]="!sistemaForm.valid">
         </div>
       </div>
-    </div>
+    </form>
   </div>
 </div>

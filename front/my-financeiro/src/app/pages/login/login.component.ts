@@ -17,6 +17,10 @@ export class LoginComponent {
 
   loginForm: FormGroup;
 
+  get dadosForm() {
+    return this, this.loginForm.controls;
+  }
+
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group(
       {
@@ -24,10 +28,6 @@ export class LoginComponent {
         senha: ['', [Validators.required]]
       }
     )
-  }
-
-  get dadosForm() {
-    return this, this.loginForm.controls;
   }
 
   loginUser() {
