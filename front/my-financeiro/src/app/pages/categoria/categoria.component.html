@@ -1,2 +1,33 @@
 <navbar></navbar>
 <sidebar></sidebar>
+<div class="container-conteudo">
+  <div class="content-page">
+    <form class="form-page" [formGroup]="categoriaForm" (submit)="enviar()">
+      <div class="row">
+        <div class="group-row">
+          <label>Sistema Financeiro</label>
+          <ng-select class="select-padrao" bindLabel="name" [items]="listSistemas" [(ngModel)]="sistemaSelect"
+            [multiple]="false" [clearable]="false" [searchable]="false">
+          </ng-select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="group-row">
+          <label>Descrição da Categoria</label>
+          <input type="text" name="nome" id="nome" placeholder="Digite a Descrição da Categoria" formControlName="nome"
+            required="">
+          <label *ngIf="categoriaForm.get('nome')?.errors?.['required'] &&  categoriaForm.get('nome')?.touched"
+            class="error-input">
+            Campo Obrigatório!
+          </label>
+        </div>
+      </div>
+      <div class="row-button">
+        <div class="group-button">
+          <input type="submit" class="btn-primary" value="Salvar" [ngClass]="{'disabled' : !categoriaForm.valid}"
+            [disabled]="!categoriaForm.valid">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

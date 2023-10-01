@@ -5,7 +5,7 @@
     <form class="form-page" [formGroup]="sistemaForm" (submit)="enviar()">
       <div class="row">
         <div class="group-row">
-          <label>Descrição Sistema</label>
+          <label>Descrição do Sistema Financeiro</label>
           <input type="text" name="nome" id="nome" placeholder="Digite a Descrição do Sistema" formControlName="nome"
             required="">
           <label *ngIf="sistemaForm.get('nome')?.errors?.['required'] &&  sistemaForm.get('nome')?.touched"

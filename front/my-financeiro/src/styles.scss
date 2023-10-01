@@ -5,8 +5,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500&display=swap");
 
 @import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
-
-
+@import "~@ng-select/ng-select/themes/default.theme.css";
 
 body {
   font-family: "Poppins";
@@ -30,6 +29,7 @@ input {
   border: 1px solid #9e9e9e;
   border-radius: 10px;
 
+  font-family: "Poppins";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -68,6 +68,7 @@ label {
         display: flex;
         width: 99%;
         justify-content: flex-start;
+        padding-bottom: 16px;
 
         .group-row {
           width: 99%;
@@ -77,12 +78,12 @@ label {
 
       .row-button {
         display: flex;
-        width: 100%;
+        width: 99%;
         justify-content: flex-end;
 
         .group-button {
           display: flex;
-          width: 100%;
+          width: 99%;
           justify-content: flex-end;
         }
       }
@@ -91,7 +92,6 @@ label {
 }
 
 .btn-primary {
-  margin-top: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -109,4 +109,37 @@ label {
   line-height: 16px;
   color: #fefefe;
   text-align: center;
+}
+
+.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.select-padrao {
+  background: #fefefe;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 160%;
+  color: #1b212d;
+  width: 100%;
+  height: 32px;
+  background: #ffffff;
+}
+
+::ng-deep .ng-select.ng-select-single .ng-select-container {
+  height: 36px !important;
+}
+
+::ng-deep .ng-select .ng-select-container {
+  color: #333;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #acacac;
+  min-height: 42px;
+  align-items: center;
 }

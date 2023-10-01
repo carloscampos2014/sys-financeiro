@@ -19,6 +19,10 @@
           class="error-input">
           Campo Obrigatório!
         </label>
+        <label *ngIf="loginForm.get('email')?.errors?.['email'] &&  loginForm.get('email')?.touched"
+          class="error-input">
+          E-mail inválido!
+        </label>
       </div>
       <div class="group-input">
         <div class="text-info">
