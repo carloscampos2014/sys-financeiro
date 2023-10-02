@@ -14,6 +14,12 @@ namespace WebApi.Models
 
         public decimal Valor { get; set; }
 
+        public DateTime DataVencimento { get; set; }
+
+        public bool Pago { get; set; }
+
+        public DateTime DataPagamento { get; set; }
+
         public EnumTipoDespesa TipoDespesa { get; set; }
     }
 }

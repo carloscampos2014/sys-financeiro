@@ -39,11 +39,12 @@ export class LoginComponent {
       .subscribe(
         token => {
           this.authService.SetToken(token);
+          this.authService.SetUser(this.dadosForm["email"].value);
           this.authService.UsuarioAutenticado(true);
           this.router.navigate(['/dashboard']);
         },
-        err => {
-          alert('Ocorreu um erro');
+        (error) => {
+          alert(`Erro: ${JSON.stringify(error)}`);
         }
       );
   }

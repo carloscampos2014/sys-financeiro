@@ -43,4 +43,15 @@
       </div>
     </div>
   </div>
+  <div class="group-menu">
+    <div class="container-icon-menu">
+      <div class="caixa-menu" [ngClass]="{
+              'caixa-menu-select': this.menuServico.menuselecionado == 'sair',
+              '': this.menuServico.menuselecionado != 'sair'}">
+        <div class="caixa-menu-texto" (click)="selectMenu('sair')">
+          Sair
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

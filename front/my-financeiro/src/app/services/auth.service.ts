@@ -38,6 +38,16 @@ export class AuthService {
     return this.token;
   }
 
+  SetUser(user: string) {
+    localStorage.setItem('User', user);
+    this.user = user;
+  }
+
+  get GetUser() {
+    this.user = localStorage.getItem('User');
+    return this.user;
+  }
+
   LimparToken() {
     this.token = null;
     this.user = null;

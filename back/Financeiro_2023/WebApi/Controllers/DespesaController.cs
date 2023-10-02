@@ -65,7 +65,12 @@ namespace WebApi.Controllers
                 Nome = model.Nome,
                 Valor = model.Valor,
                 TipoDespesa = model.TipoDespesa,
+                DataVencimento = model.DataVencimento,
+                Pago = model.Pago,
             };
+
+            if (novo.Pago)
+                novo.DataPagamento = model.DataPagamento;
 
             await _despesaServico.AdicionarDespesa(novo);
 

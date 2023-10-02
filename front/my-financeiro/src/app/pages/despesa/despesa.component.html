@@ -7,7 +7,7 @@
         <div class="group-row">
           <label>Categoria</label>
           <ng-select class="select-padrao" bindLabel="name" [items]="listCategorias" [(ngModel)]="categoriaSelect"
-            [multiple]="false" [clearable]="false" [searchable]="false">
+            [multiple]="false" [clearable]="false" [searchable]="false" formControlName="idCategoria">
           </ng-select>
         </div>
       </div>
@@ -15,7 +15,7 @@
         <div class="group-row">
           <label>Tipo de Despesa</label>
           <ng-select class="select-padrao" bindLabel="name" [items]="listTipoDespesa" [(ngModel)]="tipoDespesaSelect"
-            [multiple]="false" [clearable]="false" [searchable]="false">
+            [multiple]="false" [clearable]="false" [searchable]="false" formControlName="tipoDespesa">
           </ng-select>
         </div>
       </div>
@@ -54,6 +54,19 @@
             class="error-input">
             Valor deve ser Maior que Zero!
           </label>
+        </div>
+      </div>
+      <div class="row">
+      </div>
+      <div class="row">
+        <div class="group-row">
+          <mat-slide-toggle class="group-slide" [color]="color" [checked]="checked" [disabled]="disabled"
+            (change)="handleChangePago($event)">
+            Pago?
+          </mat-slide-toggle>
+          <label>Data de Pagamento</label>
+          <input type="date" name="dataPagamento" id="dataPagamento" placeholder="Digite a Data de Pagamento"
+            formControlName="datapagamento" [readonly]="!checked">
         </div>
       </div>
       <div class="row-button">

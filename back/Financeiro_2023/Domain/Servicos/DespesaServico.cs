@@ -24,6 +24,7 @@ namespace Domain.Servicos
             despesa.DataCadastro = DateTime.UtcNow;
             despesa.Mes = DateTime.UtcNow.Month;
             despesa.Ano = DateTime.UtcNow.Year;
+
             var valido = despesa.ValidarPropriedadeString(despesa.Nome, "Nome");
             if (valido)
                 await _interfaceDespesa.Add(despesa);
@@ -33,8 +34,6 @@ namespace Domain.Servicos
         public async Task AtualizarDespesa(Despesa despesa)
         {
             despesa.DataAlteracao = DateTime.UtcNow;
-            if (despesa.Pago)
-                despesa.DataPagamento = DateTime.UtcNow;
 
             var valido = despesa.ValidarPropriedadeString(despesa.Nome, "Nome");
             if (valido)
