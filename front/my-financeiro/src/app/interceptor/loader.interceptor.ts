@@ -71,7 +71,8 @@ export class LoaderInterceptor implements HttpInterceptor {
       }),
       catchError((error: Response) => {
         if (error.status === 401) {
-          this.router.navigate(["/ROTA-A-DEFINIR- 401 Unauthorized"]);
+          this.authService.LimparDadosUsuario();
+          this.router.navigate(["/login"]);
         }
         return throwError(error);
       }),
