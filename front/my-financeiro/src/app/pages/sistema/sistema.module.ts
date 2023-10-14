@@ -5,6 +5,9 @@ import { SistemaComponent } from "./sistema.component";
 import { NavbarModule } from "src/app/components/navbar/navbar.module";
 import { SidebarModule } from "src/app/components/sidebar/sidebar.module";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgxPaginationModule } from "ngx-pagination";
+import { NgSelectModule } from "@ng-select/ng-select";
+import { MatIconModule } from "@angular/material/icon";
 
 @NgModule({
   providers: [],
@@ -15,7 +18,10 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     NavbarModule,
     SidebarModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    NgSelectModule,
+    MatIconModule,
   ]
 })
 

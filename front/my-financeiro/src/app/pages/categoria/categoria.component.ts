@@ -52,7 +52,6 @@ export class CategoriaComponent {
           sistemasFinanceiros.push(item);
         });
         this.listSistemas = sistemasFinanceiros;
-        console.log(this.listSistemas);
       });
   }
 

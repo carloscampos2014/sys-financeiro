@@ -16,7 +16,7 @@ export class SistemaFinanceiroService {
 
   Adicionar(sistemaFincanceiro: SistemaFinanceiro) {
     return this.httpClient.post<SistemaFinanceiro>(`${this.baseurl}/SistemaFinanceiro/Adicionar`, {
-      Nome: sistemaFincanceiro.Nome
+      Nome: sistemaFincanceiro.nome
     });
   }
 
@@ -30,8 +30,8 @@ export class SistemaFinanceiroService {
 
   Atualizar(sistemaFincanceiro: SistemaFinanceiro) {
     return this.httpClient.put<SistemaFinanceiro>(`${this.baseurl}/SistemaFinanceiro/Atualizar`, {
-      Id: sistemaFincanceiro.Id,
-      Nome: sistemaFincanceiro.Nome,
+      Id: sistemaFincanceiro.id,
+      Nome: sistemaFincanceiro.nome,
     });
   }
 

@@ -1,6 +1,27 @@
 <navbar></navbar>
 <sidebar></sidebar>
-<div class="container-conteudo">
+<div *ngIf="tipoTela == 1" class="container-conteudo">
+  <div class="content-page">
+    <table [cellSpacing]="0" [cellPadding]="0">
+      <thead>
+        <tr>
+          <td>Código</td>
+          <td>Descrição</td>
+          <td>Ações</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="select-item" *ngFor="let item of tableList | paginate: config; let i = index" class="linha-table"
+          [ngClass]="{'linha-cinza' : i % 2 == 0, 'linha-branca' : i % 2 !== 0}">
+          <td>{{item.id}}</td>
+          <td>{{item.nome}}</td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div *ngIf="tipoTela == 2" class="container-conteudo">
   <div class="content-page">
     <form class="form-page" [formGroup]="sistemaForm" (submit)="enviar()">
       <div class="row">
